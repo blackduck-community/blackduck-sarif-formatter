@@ -64,7 +64,7 @@ Get Sarif format report from full Black Duck scan.
         DETECT_TOOLS: "ALL,IAC_SCAN" #All is not activating IaC scan, it needs to be activate separately with IAC_SCAN
       continue-on-error: true
 
-    - uses: synopsys-sig-community/blackduck-sarif-formatter@main
+    - uses: blackduck-community/blackduck-sarif-formatter@main
       with:
         blackduck_url: ${{ secrets.blackduck_url }}
         blackduck_project: ${{github.repository}}
@@ -118,7 +118,7 @@ Get Sarif format report from Rapid Black Duck scan.
         DETECT_TOOLS: "ALL,IAC_SCAN" #All is not activating IaC scan, it needs to be activate separately with IAC_SCAN
       continue-on-error: true
 
-    - uses: synopsys-sig-community/blackduck-sarif-formatter@main
+    - uses: blackduck-community/blackduck-sarif-formatter@main
       with:
         blackduck_url: ${{ secrets.blackduck_url }}
         blackduck_apiToken: ${{ secrets.blackduck_token }}
