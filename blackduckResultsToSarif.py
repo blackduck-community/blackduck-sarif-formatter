@@ -13,9 +13,10 @@ from timeit import default_timer as timer
 import requests
 from datetime import datetime
 import urllib3
+import version
 
-__author__ = "Jouni Lehto"
-__versionro__="0.2.13"
+__author__ = version.__author__
+__versionro__ = version.__versionro__
 
 #Global variables
 args = "" 
@@ -62,7 +63,7 @@ def checkDependencyLineNro(filename, dependency):
 def get_Transitive_upgrade_guidance(hub, projectId, projectVersionId, component) -> list:
     global origins_cache
     transitive_guidances = []
-    dependency_type = None
+    dependency_type = "DIRECT"
     if component and "origins" in component:
         for origin in component["origins"]:
             originID = getLinksparam(origin, "origin", "href").split("/")[-1]
